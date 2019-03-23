@@ -1,0 +1,49 @@
+//Given an array of ints, return true if the value 3 appears in the array exactly 3 times, and no 3's are next to each other.
+
+public boolean haveThree(int[] nums) {
+  int check = 0;
+  for (int i = 0; i < nums.length; i++) {
+    if (nums[i] == 3) {
+        check += 1;
+        i++;
+    }
+  }
+  
+  return (check == 3);
+}
+
+
+
+//Given an array of ints, return true if every 2 that appears in the array is next to another 2.
+
+public boolean twoTwo(int[] nums) {
+  int count = 0;
+  for (int i = 0; i < nums.length; i++) {
+    if (nums[i] == 2) {
+      count++;
+    } else {
+      if (count == 1) {
+          return false;
+        } else {
+          count = 0;
+        }
+      }
+    }
+    
+    return (count != 1);
+}
+
+
+//Return true if the group of N numbers at the start and end of the array are the same. For example, with {5, 6, 45, 99, 13, 5, 6}, the ends are the same for n=0 and n=2, and false for n=1 and n=3. You may assume that n is in the range 0..nums.length inclusive.
+
+public boolean sameEnds(int[] nums, int len) {
+  for (int i = 0; i < len; i++) {
+    if (nums[i] != nums[nums.length + i - len]) {
+      return false;
+    }
+  }
+  
+  return true;
+}
+
+
