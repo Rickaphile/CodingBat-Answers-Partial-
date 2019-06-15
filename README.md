@@ -1,2 +1,2 @@
 # CodingBat-Solutions-Partial
-Please see the file(s) under the main folder.
+Solutions for some of the array problems in CodingBat
